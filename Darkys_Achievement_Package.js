@@ -20,7 +20,7 @@
         style.textContent =
             ".darky:before{background:url(https://i.imgur.com/q8nNdkI.png);background-position:120px 0px;}";
         document.head.appendChild(style);
-        Game.crate = new Function(
+        Game.crate = (new Function(
             `return ${Game.crate
                 .toString()
                 .split("shadow';")
@@ -29,15 +29,15 @@
                 .join(
                     "mysterious? (me.darky === 1) ? 'background-image:url(\\'https://i.imgur.com/JKKvixm.png\\')'/*Darky's achievement package injection*/ : "
                 )}`
-        );
-        Game.crateTooltip = new Function(
+        ))();
+        Game.crateTooltip = (new Function(
             `return ${Game.crateTooltip
                 .toString()
                 .split("if (mysterious) icon=[0,7];")
                 .join(
                     "if (mysterious) icon=[0,7]; if (mysterious && me.darky === 1) icon = [1, 4, 'https://i.imgur.com/AWmeHiO.png']"
                 )}`
-        );
+        ))();
         {
             Game.Achievements["Grand design"].icon = [1, 0, "https://i.imgur.com/AWmeHiO.png"];
             Game.Achievements["Ecumenopolis"].icon = [5, 0, "https://i.imgur.com/AWmeHiO.png"];
